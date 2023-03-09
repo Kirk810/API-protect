@@ -23,6 +23,9 @@ server.use(express.urlencoded({ limit: "5mb", extended: true }));
 const MoviesRoutes = require("./src/api/routes/movies.routes");
 server.use("/api/v1/movies", MoviesRoutes);
 
+const ProducersRoutes = require("./src/api/routes/producers.routes");
+server.use("/api/v1/producers", ProducersRoutes);
+
 const UsersRoutes = require("./src/api/routes/users.routes");
 server.use("/api/v1/users", UsersRoutes);
 

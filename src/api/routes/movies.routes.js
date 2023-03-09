@@ -6,7 +6,7 @@ const {
     getAllMovies,
     createMovie,
     updateMovieByID,
-} = require("../controllers/movies.controller");
+} = require('../controllers/movies.controller');
 
 const MoviesRoutes = express.Router();
 
