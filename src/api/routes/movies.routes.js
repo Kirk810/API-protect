@@ -1,5 +1,6 @@
 const express = require('express');
-const { upload } = require('../../middlewares/files.middleware')
+const { upload } = require('../../middlewares/files.middleware');
+const { isAuth } = require('../../middlewares/auth.middleware');
 
 const {
     getAllMovies,
@@ -10,7 +11,7 @@ const {
 const MoviesRoutes = express.Router();
 
 MoviesRoutes.get("/", getAllMovies);
-MoviesRoutes.post("/", upload.single("poster"), createMovie);
+MoviesRoutes.post("/", [isAuth], upload.single("poster"), createMovie);
 MoviesRoutes.patch("/:id", upload.single("poster"), updateMovieByID);
 
 module.exports = MoviesRoutes;
