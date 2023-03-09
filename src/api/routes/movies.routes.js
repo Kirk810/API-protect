@@ -11,6 +11,6 @@ const MoviesRoutes = express.Router();
 
 MoviesRoutes.get("/", getAllMovies);
 MoviesRoutes.post("/", upload.single("poster"), createMovie);
-MoviesRoutes.patch("/:id", upload.single('poster'), updateMovieByID);
+MoviesRoutes.patch("/:id", upload.single("poster"), updateMovieByID);
 
 module.exports = MoviesRoutes;
