@@ -2,7 +2,7 @@ const Producer = require('../models/producer.model');
 
 const getAllProducers = async (req, res, next) => {
     try {
-        const allProducers = await Producer.find().populate("allMovies");
+        const allProducers = await Producer.find().populate("movies");
         return res.status(200).json(allProducers);
     } catch (error) {
         return next('Producers not found', error);
